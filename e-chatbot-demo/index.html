@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat View Web Component Test</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+        padding: 16px;
+      }
+
+      #chat-container {
+        height: 100%;
+        width: 100%;
+        max-width: 800px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container">
+      <!-- START E-CHATBOT -->
+      <e-chatbot></e-chatbot>
+
+      <script src="https://cdn.jsdelivr.net/gh/WillowWisp/e-chatbot-build/e-chatbot.js"></script>
+      <!-- END E-CHATBOT -->
+    </div>
+
+    <script>
+      // const chatContainer = document.getElementById("chat-container");
+
+      // let isDragging = false;
+      // let offsetX = 0;
+      // let offsetY = 0;
+
+      // document.addEventListener("mousedown", (e) => {
+      //   isDragging = true;
+      //   offsetX = e.clientX - chatContainer.offsetLeft;
+      //   offsetY = e.clientY - chatContainer.offsetTop;
+      //   chatContainer.style.cursor = "grabbing";
+      //   // e.preventDefault(); // イベントの干渉を防ぐ
+      // });
+
+      // document.addEventListener("mousemove", (e) => {
+      //   if (isDragging) {
+      //     const x = e.clientX - offsetX;
+      //     const y = e.clientY - offsetY;
+      //     chatContainer.style.left = `${x}px`;
+      //     chatContainer.style.top = `${y}px`;
+      //   }
+      // });
+
+      // document.addEventListener("mouseup", () => {
+      //   isDragging = false;
+      //   // Reset cursor to default
+      //   chatContainer.style.cursor = null;
+      // });
+    </script>
+  </body>
+</html>

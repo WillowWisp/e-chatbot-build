@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "app-ehr-stag"
+  },
+  "targets": {
+    "app-ehr-stag": {
+      "hosting": {
+        "e-chatbot-demo": [
+          "e-chatbot-demo"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
