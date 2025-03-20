@@ -23,46 +23,41 @@
         overflow: hidden;
         z-index: 1;
       }
+
+      #chatbot-container {
+        height: 100%;
+        width: 100%;
+      }
+
+      e-chatbot {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
     </style>
   </head>
   <body>
     <div id="chat-container">
       <!-- START E-CHATBOT -->
-      <e-chatbot client-id="skg"></e-chatbot>
-
-      <script src="https://cdn.jsdelivr.net/gh/WillowWisp/e-chatbot-build/e-chatbot.js"></script>
+      <div id="chatbot-container"></div>
       <!-- END E-CHATBOT -->
     </div>
 
     <script>
-      // const chatContainer = document.getElementById("chat-container");
+      // Get client ID from query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const clientId = urlParams.get("client-id");
 
-      // let isDragging = false;
-      // let offsetX = 0;
-      // let offsetY = 0;
-
-      // document.addEventListener("mousedown", (e) => {
-      //   isDragging = true;
-      //   offsetX = e.clientX - chatContainer.offsetLeft;
-      //   offsetY = e.clientY - chatContainer.offsetTop;
-      //   chatContainer.style.cursor = "grabbing";
-      //   // e.preventDefault(); // イベントの干渉を防ぐ
-      // });
-
-      // document.addEventListener("mousemove", (e) => {
-      //   if (isDragging) {
-      //     const x = e.clientX - offsetX;
-      //     const y = e.clientY - offsetY;
-      //     chatContainer.style.left = `${x}px`;
-      //     chatContainer.style.top = `${y}px`;
-      //   }
-      // });
-
-      // document.addEventListener("mouseup", () => {
-      //   isDragging = false;
-      //   // Reset cursor to default
-      //   chatContainer.style.cursor = null;
-      // });
+      if (clientId) {
+        const chatbotContainer = document.getElementById("chatbot-container");
+        const chatbotElement = document.createElement("e-chatbot");
+        chatbotElement.setAttribute("client-id", clientId);
+        chatbotContainer.appendChild(chatbotElement);
+      } else {
+        document.getElementById("chat-container").style.display = "none";
+      }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/WillowWisp/e-chatbot-build/e-chatbot.js"></script>
   </body>
 </html>
